@@ -1,0 +1,417 @@
+/* Background pattern from Toptal Subtle Patterns */
+body {
+  box-sizing: border-box;
+  background: url("../img/white_wall_@2X.png");
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 14px;
+  z-index: 1000;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+header.scroll {
+  background-color: rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 8px 20px -6px #000;
+  -moz-box-shadow: 0 8px 20px -6px #000;
+  box-shadow: 0 0px 40px 10px #000;
+  transition: 2s;
+}
+
+header > nav {
+  width: 100%;
+  height: 70px;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+header > nav > h2 {
+  margin: 0px 0px 0px 20px;
+}
+
+header > nav > ul {
+  list-style-type: none;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+header > nav > ul > li {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  margin: 0 20px 0px 20px;
+  padding: 20px;
+}
+
+header ul li:hover,
+header ul li.active {
+  box-shadow: inset 0 0 10px #000000;
+}
+
+header ul li a,
+header h2 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header .haburger_menu,
+header .overlay {
+  position: fixed;
+  top: 6px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+header .haburger_menu {
+  z-index: 1;
+}
+
+header .haburger_menu::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  background: #000;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+header .haburger_menu.active::before {
+  transform: rotate(405deg);
+  background: #ffeb3b;
+  color: #000;
+}
+
+header .overlay {
+  background: rgba(0, 0, 0, 0.8);
+  transition: transform 1s;
+}
+
+header .overlay.active {
+  transform: scale(100, 100);
+}
+
+header .menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow: auto;
+  height: 100vh;
+  width: 100vw;
+
+  visibility: hidden;
+}
+
+header .menu.active {
+  transition-delay: 0.5s;
+  visibility: visible;
+}
+
+header .menu ul {
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+
+header .menu ul li a {
+  text-shadow: 6px 6px 6px rgba(227, 255, 0, 0.8);
+  margin: 30px 0 30px 0;
+  padding: 20px;
+  position: relative;
+  font-weight: bold;
+  font-size: 25px;
+  display: block;
+}
+
+section.home {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 70% 95%, 50% 100%, 30% 95%, 0 90%);
+  /* photoby Mushon Tamir on Unsplash */
+  background-image: url("../img/mushon-tamir-iHTBNp8L-SQ-unsplash.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 85vh;
+  padding: 80px 0px 50px 0px;
+  width: 100%;
+  position: relative;
+  z-index: 500;
+  overflow-x: hidden;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-around;
+  -ms-align-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+section.contact .contact_phone_number,
+section.contact .contact_opening_hours,
+section.contact .contact_adress,
+section.home .home_text {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  padding: 20px;
+}
+section.home .home_text {
+  width: 500px;
+}
+
+section.home .home_photos {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+section.home figure {
+  border: 2px solid silver;
+  position: relative;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: table;
+  padding: 10px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+section.home figure:nth-child(1) {
+  transform: rotate(-15deg);
+  width: 300px;
+}
+
+section.home figure:nth-child(2) {
+  transform: rotate(12deg);
+  width: 150px;
+}
+
+@media (max-width: 930px) {
+  header .haburger_menu,
+  header .overlay {
+    display: block;
+  }
+  header > nav > ul {
+    display: none;
+  }
+  section.home figure:nth-child(1) {
+    top: 10px;
+    right: 70px;
+  }
+  section.home figure:nth-child(2) {
+    top: -100px;
+    right: -100px;
+  }
+}
+
+section.home figure img {
+  border-radius: 8px;
+  width: 100%;
+}
+
+section.home figure figcaption {
+  margin-top: 10px;
+  text-align: center;
+}
+
+section.home .arrow {
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+}
+
+section.home .arrow span {
+  animation: animate 4s infinite;
+  border-bottom: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(45deg);
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+section.home .arrow span:nth-child(1) {
+  animation-delay: -0.2s;
+}
+
+section.home .arrow span:nth-child(2) {
+  animation-delay: -0.4s;
+}
+
+section.home .arrow span:nth-child(3) {
+  animation-delay: -0.6s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0.1;
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+}
+
+section.offer {
+  transform: skew(0deg, -10deg) translateY(-300px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-sizing: border-box;
+  background: #ccc;
+  padding: 220px 0px 0px 0px;
+  width: 100%;
+
+  position: relative;
+  z-index: 200;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+section.offer .offer_text {
+  transform: skew(0deg, 10deg);
+  padding: 20px;
+}
+
+section.offer img {
+  width: 50%;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+section.about {
+  transform: skew(0deg, 10deg) translateY(-50px);
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  -ms-align-items: inherit;
+  align-items: inherit;
+}
+
+section.about .about_text,
+section.company_info {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+}
+
+section.about .about_text {
+  transform: skew(0deg, -10deg);
+  flex-basis: 200px;
+}
+
+@media (max-width: 1000px) {
+  section.offer,
+  section.about {
+    transform: skew(0deg, 0deg) translateY(0px);
+    padding: 0px;
+    flex-wrap: wrap;
+  }
+  section.offer .offer_text,
+  section.about .about_text {
+    transform: skew(0deg, 0deg);
+  }
+  section.offer img {
+    width: 100%;
+    height: 40vh;
+  }
+}
+
+section.images_gallery {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 10px;
+  width: 90vw;
+}
+
+section.images_gallery .gallery {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+section.images_gallery img {
+  border-radius: 5px;
+  height: 200px;
+  margin: 5px;
+}
+
+section.contact {
+  background: url("../img/ema eldor serwis elektronarzedzi grudziadz.jpg")
+    no-repeat right top fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+section.contact .contact_opening_hours tr:nth-child(odd) {
+  background-color: #dddddd;
+}
