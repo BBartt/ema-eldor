@@ -1,7 +1,7 @@
 /* Background pattern from Toptal Subtle Patterns */
 body {
   box-sizing: border-box;
-  background: url("../img/white_wall_@2X.png");
+  background: url("../img/ravenna_@2X.png");
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   overflow-x: hidden;
@@ -150,6 +150,7 @@ header .menu ul {
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
+  width: 60%;
 }
 
 header .menu ul li a {
@@ -189,7 +190,10 @@ section.home {
 section.contact .contact_phone_number,
 section.contact .contact_opening_hours,
 section.contact .contact_adress,
-section.home .home_text {
+section.home .home_text,
+section.offer,
+section.offer figcaption,
+section.contact i {
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 1);
   border-radius: 10px;
@@ -307,8 +311,7 @@ section.home .arrow span:nth-child(3) {
 section.offer {
   transform: skew(0deg, -10deg) translateY(-300px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  box-sizing: border-box;
-  background: #ccc;
+  background: inherit;
   padding: 220px 0px 0px 0px;
   width: 100%;
 
@@ -323,12 +326,19 @@ section.offer {
 section.offer .offer_text {
   transform: skew(0deg, 10deg);
   padding: 20px;
+  width: 100%;
 }
 
 section.offer img {
   width: 50%;
   height: 80vh;
   margin: 0 auto;
+}
+
+section.offer figcaption {
+  position: absolute;
+  bottom: 30px;
+  right: 15%;
 }
 
 section.about {
@@ -342,17 +352,17 @@ section.about {
   align-items: inherit;
 }
 
-section.about .about_text,
-section.company_info {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  text-align: center;
-  padding: 10px;
-  margin: 20px;
-}
-
 section.about .about_text {
   transform: skew(0deg, -10deg);
   flex-basis: 200px;
+}
+
+section.about .about_text,
+section.about_info {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  padding: 10px;
+  margin: 40px;
 }
 
 @media (max-width: 1000px) {
@@ -372,7 +382,7 @@ section.about .about_text {
   }
 }
 
-section.images_gallery {
+section.assortment {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 5px;
   margin: 20px auto;
@@ -380,7 +390,7 @@ section.images_gallery {
   width: 90vw;
 }
 
-section.images_gallery .gallery {
+section.assortment .gallery {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -388,9 +398,10 @@ section.images_gallery .gallery {
   justify-content: space-around;
 }
 
-section.images_gallery img {
+section.assortment img {
   border-radius: 5px;
   height: 200px;
+  max-width: 100%;
   margin: 5px;
 }
 
@@ -412,6 +423,44 @@ section.contact {
   align-items: center;
 }
 
+section.contact i {
+  text-align: center;
+  font-size: 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+section.contact .contact_container {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+}
+
 section.contact .contact_opening_hours tr:nth-child(odd) {
   background-color: #dddddd;
+}
+
+button.back_to_top_btn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background: #ff0000;
+  font-size: 22px;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 20000;
+  outline: none;
+  display: none;
+  border: none;
 }
