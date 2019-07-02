@@ -187,18 +187,19 @@ section.home {
   flex-wrap: wrap;
 }
 
-section.contact .contact_phone_number,
-section.contact .contact_opening_hours,
-section.contact .contact_adress,
 section.home .home_text,
 section.offer,
 section.offer figcaption,
-section.contact i {
+section.contact i,
+section.contact .contact_numbers,
+section.contact .contact_adress,
+section.contact .contact_opening_hours {
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 1);
   border-radius: 10px;
   padding: 20px;
 }
+
 section.home .home_text {
   width: 500px;
 }
@@ -349,6 +350,13 @@ section.about {
   justify-content: space-around;
   -ms-align-items: inherit;
   align-items: inherit;
+  margin-top: 20px;
+}
+
+section.about .about_h {
+  transform: skew(0deg, -10deg);
+  position: absolute;
+  top: -20px;
 }
 
 section.about .about_text {
@@ -372,7 +380,8 @@ section.about_info {
     flex-wrap: wrap;
   }
   section.offer .offer_text,
-  section.about .about_text {
+  section.about .about_text,
+  section.about .about_h {
     transform: skew(0deg, 0deg);
   }
   section.offer img {
@@ -389,6 +398,10 @@ section.assortment {
   width: 90vw;
 }
 
+section.assortment h3 {
+  text-align: center;
+}
+
 section.assortment .gallery {
   display: -webkit-flex;
   display: -ms-flex;
@@ -397,7 +410,11 @@ section.assortment .gallery {
   justify-content: space-around;
 }
 
-section.assortment img {
+div.sl-wrapper .sl-caption {
+  width: 10 !important;
+}
+
+section.assortment .gallery img {
   border-radius: 5px;
   height: 200px;
   max-width: 100%;
