@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ema-eldor\.pl [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://ema-eldor.pl/$1 [R,L]

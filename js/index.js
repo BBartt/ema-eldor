@@ -25,7 +25,7 @@ $(document).ready(function() {
   $(".gallery a").simpleLightbox();
 
   $(
-    "header nav ul li [href='#Strona główna'], header nav h2, button.back_to_top_btn"
+    "header nav [href='#Strona główna'], header nav h2, button.back_to_top_btn"
   ).on("click", function() {
     $("html, body").animate({ scrollTop: 0 }, 900);
   });
@@ -59,5 +59,21 @@ $(document).ready(function() {
       { scrollTop: $("section.contact").offset().top },
       900
     );
+  });
+
+  $().ready(function() {
+    var sName = "cookiesok";
+    $("#close-cookie-warn").click(function() {
+      var oExpire = new Date();
+      oExpire.setTime(new Date().getTime() + 3600000 * 24 * 365);
+      document.cookie = sName + "=1;expires=" + oExpire;
+      $("#cookie-warn").hide("slow");
+    });
+
+    var sStr = "; " + document.cookie + ";";
+    var nIndex = sStr.indexOf("; " + escape(sName) + "=");
+    if (nIndex === -1) {
+      $("#cookie-warn").show();
+    }
   });
 });

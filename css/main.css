@@ -39,10 +39,6 @@ header > nav {
   align-items: center;
 }
 
-header > nav > h2 {
-  margin: 0px 0px 0px 20px;
-}
-
 header > nav > ul {
   list-style-type: none;
   display: -webkit-flex;
@@ -68,8 +64,7 @@ header ul li.active {
   box-shadow: inset 0 0 10px #000000;
 }
 
-header ul li a,
-header h2 a {
+header a {
   text-decoration: none;
   color: #fff;
 }
@@ -189,11 +184,9 @@ section.home {
 
 section.home .home_text,
 section.offer,
-section.offer figcaption,
+section.offer h3,
 section.contact i,
-section.contact .contact_numbers,
-section.contact .contact_adress,
-section.contact .contact_opening_hours {
+section.contact .contact_container {
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 1);
   border-radius: 10px;
@@ -220,11 +213,12 @@ section.home figure {
   border: 2px solid silver;
   position: relative;
   border-radius: 8px;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   display: table;
   padding: 10px;
   opacity: 0.8;
-  margin: 0;
+  margin: 10px;
 }
 
 section.home figure:nth-child(1) {
@@ -237,7 +231,7 @@ section.home figure:nth-child(2) {
   width: 150px;
 }
 
-@media (max-width: 930px) {
+@media (max-width: 860px) {
   header .haburger_menu,
   header .overlay {
     display: block;
@@ -247,22 +241,16 @@ section.home figure:nth-child(2) {
   }
   section.home figure:nth-child(1) {
     top: 10px;
-    right: 70px;
   }
   section.home figure:nth-child(2) {
-    top: -100px;
-    right: -100px;
+    top: -10px;
+    right: -80px;
   }
 }
 
 section.home figure img {
   border-radius: 8px;
   width: 100%;
-}
-
-section.home figure figcaption {
-  margin-top: 10px;
-  text-align: center;
 }
 
 section.home .arrow {
@@ -325,20 +313,19 @@ section.offer {
 
 section.offer .offer_text {
   transform: skew(0deg, 10deg);
-  padding: 20px;
-  width: 100%;
+  padding: 30px;
 }
 
 section.offer img {
-  width: 50%;
-  height: 80vh;
   margin: 0 auto;
+  width: 100%;
 }
 
-section.offer figcaption {
+section.offer h3 {
+  font-size: 16px;
   position: absolute;
-  bottom: 30px;
-  right: 15%;
+  bottom: 20px;
+  right: 0px;
 }
 
 section.about {
@@ -372,6 +359,10 @@ section.about_info {
   margin: 40px;
 }
 
+section.about_info h4 {
+  margin: 10px 0px 10px 0px;
+}
+
 @media (max-width: 1000px) {
   section.offer,
   section.about {
@@ -385,7 +376,6 @@ section.about_info {
     transform: skew(0deg, 0deg);
   }
   section.offer img {
-    width: 100%;
     height: 40vh;
   }
 }
@@ -428,7 +418,7 @@ section.contact {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 
   display: -webkit-flex;
@@ -464,8 +454,8 @@ section.contact .contact_opening_hours tr:nth-child(odd) {
 
 button.back_to_top_btn {
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 20px;
+  right: 20px;
 
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   background: #ff0000;
@@ -480,3 +470,48 @@ button.back_to_top_btn {
   display: none;
   border: none;
 }
+
+#cookie-warn {
+  position: fixed;
+  bottom: 0;
+  background: #eee;
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+  display: none;
+  z-index: 3000;
+}
+
+#cookie-warn a {
+  color: #d66e1a;
+  text-transform: uppercase;
+  float: right;
+  padding-right: 20px;
+}
+
+#cookie-warn p {
+  font-size: 12px;
+  color: #333;
+}
+
+/* The MIT License (MIT)
+
+Copyright (c) 2016 Andre Rinas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
