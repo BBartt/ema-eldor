@@ -10,8 +10,8 @@ body {
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0);
-  font-size: 14px;
+  /background-color: rgba(0, 0, 0, 0);
+  /* font-size: 14px; */
   z-index: 1000;
   position: fixed;
   right: 0;
@@ -20,11 +20,44 @@ header {
 }
 
 header.scroll {
-  background-color: rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 0 8px 20px -6px #000;
-  -moz-box-shadow: 0 8px 20px -6px #000;
-  box-shadow: 0 0px 40px 10px #000;
+  /* -webkit-box-shadow: 0 8px 20px -6px #000; */
+  /* -moz-box-shadow: 0 8px 20px -6px #000; */
+  /* box-shadow: 0 0px 40px 10px #000; */
+  /* background-color: rgba(0, 0, 0, 0.35); */
+
+  /* -webkit-box-shadow: 0 0px 10px 4px #fff;
+  -moz-box-shadow: 0 0px 10px 4px #fff;
+  box-shadow: 0 0px 10px 4px #fff;
   transition: 2s;
+  background-color: rgba(255, 255, 255, 0.9); */
+
+  transition: box-shadow 2s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: 0 0px 10px 7px #fff;
+}
+
+header.scroll a {
+  transition: color 1s cubic-bezier(0.77, 0, 0.175, 1);
+  /* color: #000; */
+  color: #615f5f;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: width 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+header.scroll:before {
+  /* -webkit-transition: all 1s cubic-bezier(0, 1.005, 0.34, 0.995);
+  transition: all 1s cubic-bezier(0, 1.005, 0.34, 0.995); */
+  width: 100%;
 }
 
 header > nav {
@@ -66,6 +99,9 @@ header ul li.active {
 
 header a {
   text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  z-index: 100;
   color: #fff;
 }
 
@@ -328,6 +364,14 @@ section.offer h3 {
   right: 0px;
 }
 
+section.about .about_text,
+section.about_info {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  padding: 10px;
+  /* margin: 40px; */
+}
+
 section.about {
   transform: skew(0deg, 10deg) translateY(-50px);
   display: -webkit-flex;
@@ -337,26 +381,28 @@ section.about {
   justify-content: space-around;
   -ms-align-items: inherit;
   align-items: inherit;
-  margin-top: 20px;
+  margin: 50px 0px 70px;
 }
 
-section.about .about_h {
+section.about .h3 {
   transform: skew(0deg, -10deg);
   position: absolute;
-  top: -20px;
+  top: -50px;
 }
 
 section.about .about_text {
   transform: skew(0deg, -10deg);
   flex-basis: 200px;
+  display: table;
+  margin: 15px;
 }
 
-section.about .about_text,
 section.about_info {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  text-align: center;
-  padding: 10px;
-  margin: 40px;
+  margin: 50px 0px 20px;
+}
+
+section.about_info > div {
+  text-decoration: underline;
 }
 
 section.about_info h4 {
@@ -367,25 +413,26 @@ section.about_info h4 {
   section.offer,
   section.about {
     transform: skew(0deg, 0deg) translateY(0px);
-    padding: 0px;
     flex-wrap: wrap;
+    padding: 0px;
   }
   section.offer .offer_text,
   section.about .about_text,
-  section.about .about_h {
+  section.about .h3 {
     transform: skew(0deg, 0deg);
   }
   section.offer img {
     height: 40vh;
+  }
+  section.about {
+    margin-top: 40px;
   }
 }
 
 section.assortment {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 5px;
-  margin: 20px auto;
   padding: 10px;
-  width: 90vw;
 }
 
 section.assortment h3 {
