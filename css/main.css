@@ -395,6 +395,7 @@ section.about .about_text {
   flex-basis: 200px;
   display: table;
   margin: 15px;
+  border-radius: 10px;
 }
 
 section.about_info {
