@@ -41,6 +41,12 @@ header.scroll a {
   color: #615f5f;
 }
 
+header.scroll ul li a:hover::after,
+header.scroll ul li.active a::after {
+  /* transition: background-color 1.4s cubic-bezier(0.77, 0, 0.175, 1); */
+  background-color: #615f5f;
+}
+
 header::before {
   content: "";
   position: absolute;
@@ -51,7 +57,7 @@ header::before {
   height: 100%;
   width: 0%;
   background-color: rgba(255, 255, 255, 0.9);
-  transition: width 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: width 1.4s, background-color 1s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 header.scroll:before {
@@ -61,9 +67,8 @@ header.scroll:before {
 }
 
 header > nav {
-  width: 100%;
   height: 70px;
-
+  width: 100%;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
@@ -92,9 +97,19 @@ header > nav > ul > li {
   padding: 20px;
 }
 
-header ul li:hover,
-header ul li.active {
-  box-shadow: inset 0 0 10px #000000;
+header ul li {
+  position: relative;
+}
+
+header ul li a:hover::after,
+header ul li.active a::after {
+  /* box-shadow: inset 0 0 10px #000000; */
+  content: "";
+  background-color: #fff;
+  width: 40%;
+  height: 3px;
+  position: absolute;
+  display: block;
 }
 
 header a {
@@ -185,7 +200,7 @@ header .menu ul {
 }
 
 header .menu ul li a {
-  text-shadow: 6px 6px 6px rgba(227, 255, 0, 0.8);
+  /* text-shadow: 6px 6px 6px rgba(227, 255, 0, 0.8); */
   margin: 30px 0 30px 0;
   padding: 20px;
   position: relative;
