@@ -94,7 +94,7 @@ header > nav > ul > li {
   -ms-align-items: center;
   align-items: center;
   margin: 0 20px 0px 20px;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 header ul li {
@@ -201,12 +201,13 @@ header .menu ul {
 
 header .menu ul li a {
   /* text-shadow: 6px 6px 6px rgba(227, 255, 0, 0.8); */
-  margin: 30px 0 30px 0;
+  margin: 10px 0 10px 0;
   padding: 20px;
   position: relative;
   font-weight: bold;
   font-size: 25px;
   display: block;
+  color: #fff;
 }
 
 section.home {
@@ -283,6 +284,10 @@ section.home figure:nth-child(2) {
 }
 
 @media (max-width: 860px) {
+  header nav > a[href="#Strona-główna"] {
+    margin-left: 20px;
+    font-size: 20px;
+  }
   header .haburger_menu,
   header .overlay {
     display: block;
@@ -426,6 +431,10 @@ section.about_info h4 {
 }
 
 @media (max-width: 1000px) {
+  header nav ul li {
+    margin: 0px 5px;
+    padding: 5px;
+  }
   section.offer,
   section.about {
     transform: skew(0deg, 0deg) translateY(0px);
