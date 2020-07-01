@@ -32,7 +32,7 @@ $(document).ready(function () {
     "click",
     function () {
       $("html, body").animate(
-        { scrollTop: $(".home .arrow span").offset().top },
+        { scrollTop: $(".home .arrow span").offset().top + 50 },
         900
       );
     }
